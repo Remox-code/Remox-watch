@@ -361,6 +361,7 @@ function renderLibrary() {
 
           <div class="card-actions">
             <button class="primary-btn" data-edit="${item.id}">ویرایش</button>
+            ${item.episode > 0 ? `<button class="secondary-btn" data-prev="${item.id}">قسمت قبلی</button>` : ""}
             ${item.episode < item.latestEpisode ? `<button class="secondary-btn" data-next="${item.id}">قسمت بعدی</button>` : ""}
           </div>
         </div>
@@ -376,8 +377,12 @@ function renderLibrary() {
     btn.addEventListener("click", () => editItem(Number(btn.dataset.edit)));
   });
 
-  $$("[data-next]").forEach(btn => {
+  $$(`[data-next]`).forEach(btn => {
     btn.addEventListener("click", () => nextEpisode(Number(btn.dataset.next)));
+  });
+
+  $$(`[data-prev]`).forEach(btn => {
+    btn.addEventListener("click", () => previousEpisode(Number(btn.dataset.prev)));
   });
 }
 
@@ -424,6 +429,23 @@ function nextEpisode(id) {
   renderLibrary();
   updateStats();
   showToast(`رسیدی به قسمت ${item.episode}.`);
+}
+
+function previousEpisode(id) {
+  const item = library.find(x => x.id === id);
+  if (!item) return;
+
+  if (item.episode <= 0) {
+    showToast("قسمت فعلی نمی‌تواند کمتر از 0 باشد.");
+    return;
+  }
+
+  item.episode -= 1;
+  item.updatedAt = Date.now();
+  saveLibrary();
+  renderLibrary();
+  updateStats();
+  showToast(`برگشتی به قسمت ${item.episode}.`);
 }
 
 function updateStats() {
