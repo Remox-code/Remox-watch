@@ -1,13 +1,13 @@
 {
-  "background_color": "#ffffff",
+  "background_color": "#000000",
   "dir": "ltr",
   "display": "standalone",
-  "name": "remox-code.github",
+  "name": "Remox-watch",
   "orientation": "any",
   "scope": "/",
-  "short_name": "remox-watch",
-  "start_url": "/",
-  "theme_color": "#ffffff",
-  "id": "remox-watch",
-  "description": "an app for organizing your movies and service list"
+  "short_name": "Remox-watch",
+  "start_url": "/Remox-watch/",
+  "theme_color": "#000000",
+  "id": "remox-code.github",
+  "description": "A personal anime and TV series watch progress tracker"
 }

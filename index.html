@@ -1,128 +1,148 @@
 <!doctype html>
 <html lang="fa" dir="rtl">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>WatchFlow — Watch Tracker</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div class="ambient ambient-1"></div>
-  <div class="ambient ambient-2"></div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WatchFlow — Watch Tracker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="manifest" href="manifest.json" />
+  </head>
+  <body>
+    <div class="ambient ambient-1"></div>
+    <div class="ambient ambient-2"></div>
 
-  <header class="topbar">
-    <a class="brand" href="#">
-      <span class="brand-mark">W</span>
-      <span>
-        <strong>WatchFlow</strong>
-        <small>Watch Tracker</small>
-      </span>
-    </a>
+    <header class="topbar">
+      <a class="brand" href="#">
+        <span class="brand-mark">W</span>
+        <span>
+          <strong>WatchFlow</strong>
+          <small>Watch Tracker</small>
+        </span>
+      </a>
 
-    <div class="top-actions">
-      <button class="icon-btn" id="settingsBtn" title="تنظیمات API">⚙</button>
-      <button class="theme-btn" id="themeBtn" title="تغییر حالت">☼</button>
-    </div>
-  </header>
-
-  <main class="container">
-    <section class="hero">
-      <div class="hero-copy">
-        <span class="eyebrow">YOUR PERSONAL WATCHLIST</span>
-        <h1>هر چیزی که می‌بینی،<br><span>اینجا ثبتش کن.</span></h1>
-        <p>اسم انیمه یا سریال را جستجو کن، عنوان موردنظرت را انتخاب کن و آخرین قسمت تماشا شده را ذخیره کن.</p>
+      <div class="top-actions">
+        <button class="icon-btn" id="settingsBtn" title="تنظیمات API">⚙</button>
+        <button class="theme-btn" id="themeBtn" title="تغییر حالت">☼</button>
       </div>
+    </header>
 
-      <div class="search-box-wrap">
-        <div class="search-box">
-          <span class="search-icon">⌕</span>
-          <input id="searchInput" type="search" autocomplete="off"
-                 placeholder="مثلاً One Piece، Breaking Bad، Naruto...">
-          <span class="search-spinner" id="searchSpinner"></span>
+    <main class="container">
+      <section class="hero">
+        <div class="hero-copy">
+          <span class="eyebrow">YOUR PERSONAL WATCHLIST</span>
+          <h1>هر چیزی که می‌بینی،<br /><span>اینجا ثبتش کن.</span></h1>
+          <p>
+            اسم انیمه یا سریال را جستجو کن، عنوان موردنظرت را انتخاب کن و آخرین
+            قسمت تماشا شده را ذخیره کن.
+          </p>
         </div>
-        <div class="suggestions" id="suggestions"></div>
-        <p class="api-hint" id="apiHint"></p>
-      </div>
-    </section>
 
-    <section class="stats" id="stats">
-      <div class="stat-card">
-        <span>کل عناوین</span>
-        <strong id="totalCount">0</strong>
-      </div>
-      <div class="stat-card">
-        <span>در حال تماشا</span>
-        <strong id="watchingCount">0</strong>
-      </div>
-      <div class="stat-card">
-        <span>تمام‌شده</span>
-        <strong id="completedCount">0</strong>
-      </div>
-      <div class="stat-card">
-        <span>قسمت‌های دیده‌شده</span>
-        <strong id="episodeCount">0</strong>
-      </div>
-    </section>
-
-    <section class="library-section">
-      <div class="section-head">
-        <div>
-          <span class="eyebrow">MY LIBRARY</span>
-          <h2>لیست من</h2>
+        <div class="search-box-wrap">
+          <div class="search-box">
+            <span class="search-icon">⌕</span>
+            <input
+              id="searchInput"
+              type="search"
+              autocomplete="off"
+              placeholder="مثلاً One Piece، Breaking Bad، Naruto..."
+            />
+            <span class="search-spinner" id="searchSpinner"></span>
+          </div>
+          <div class="suggestions" id="suggestions"></div>
+          <p class="api-hint" id="apiHint"></p>
         </div>
-        <div class="filters">
-          <button class="filter active" data-filter="all">همه</button>
-          <button class="filter" data-filter="watching">در حال تماشا</button>
-          <button class="filter" data-filter="completed">تمام‌شده</button>
+      </section>
+
+      <section class="stats" id="stats">
+        <div class="stat-card">
+          <span>کل عناوین</span>
+          <strong id="totalCount">0</strong>
         </div>
+        <div class="stat-card">
+          <span>در حال تماشا</span>
+          <strong id="watchingCount">0</strong>
+        </div>
+        <div class="stat-card">
+          <span>تمام‌شده</span>
+          <strong id="completedCount">0</strong>
+        </div>
+        <div class="stat-card">
+          <span>قسمت‌های دیده‌شده</span>
+          <strong id="episodeCount">0</strong>
+        </div>
+      </section>
+
+      <section class="library-section">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">MY LIBRARY</span>
+            <h2>لیست من</h2>
+          </div>
+          <div class="filters">
+            <button class="filter active" data-filter="all">همه</button>
+            <button class="filter" data-filter="watching">در حال تماشا</button>
+            <button class="filter" data-filter="completed">تمام‌شده</button>
+          </div>
+        </div>
+
+        <div class="empty-state" id="emptyState">
+          <div class="empty-icon">＋</div>
+          <h3>هنوز چیزی به لیستت اضافه نکردی</h3>
+          <p>
+            بالا اسم یک انیمه یا سریال را جستجو کن و اولین عنوانت را اضافه کن.
+          </p>
+        </div>
+
+        <div class="watch-grid" id="watchGrid"></div>
+      </section>
+    </main>
+
+    <div class="modal-backdrop hidden" id="itemModal">
+      <div class="modal">
+        <button class="modal-close" data-close="itemModal">×</button>
+        <div id="itemModalContent"></div>
       </div>
-
-      <div class="empty-state" id="emptyState">
-        <div class="empty-icon">＋</div>
-        <h3>هنوز چیزی به لیستت اضافه نکردی</h3>
-        <p>بالا اسم یک انیمه یا سریال را جستجو کن و اولین عنوانت را اضافه کن.</p>
-      </div>
-
-      <div class="watch-grid" id="watchGrid"></div>
-    </section>
-  </main>
-
-  <div class="modal-backdrop hidden" id="itemModal">
-    <div class="modal">
-      <button class="modal-close" data-close="itemModal">×</button>
-      <div id="itemModalContent"></div>
     </div>
-  </div>
 
-  <div class="modal-backdrop hidden" id="settingsModal">
-    <div class="modal small-modal">
-      <button class="modal-close" data-close="settingsModal">×</button>
-      <div class="modal-title">
-        <span class="modal-kicker">TMDB API</span>
-        <h3>تنظیمات اتصال</h3>
+    <div class="modal-backdrop hidden" id="settingsModal">
+      <div class="modal small-modal">
+        <button class="modal-close" data-close="settingsModal">×</button>
+        <div class="modal-title">
+          <span class="modal-kicker">TMDB API</span>
+          <h3>تنظیمات اتصال</h3>
+        </div>
+        <p class="modal-note">
+          برای دریافت اطلاعات عنوان‌ها، یک TMDB API Key یا Read Access Token
+          وارد کن. این مقدار فقط در مرورگر خودت ذخیره می‌شود.
+        </p>
+        <label class="field-label">API Key</label>
+        <input
+          id="apiKeyInput"
+          class="text-input"
+          type="password"
+          placeholder="مثلاً 123456abcdef..."
+        />
+        <button class="primary-btn full" id="saveApiKey">
+          ذخیره و تست اتصال
+        </button>
+        <p class="status-text" id="settingsStatus"></p>
       </div>
-      <p class="modal-note">
-        برای دریافت اطلاعات عنوان‌ها، یک TMDB API Key یا Read Access Token وارد کن.
-        این مقدار فقط در مرورگر خودت ذخیره می‌شود.
-      </p>
-      <label class="field-label">API Key</label>
-      <input id="apiKeyInput" class="text-input" type="password" placeholder="مثلاً 123456abcdef...">
-      <button class="primary-btn full" id="saveApiKey">ذخیره و تست اتصال</button>
-      <p class="status-text" id="settingsStatus"></p>
     </div>
-  </div>
 
-  <div class="toast" id="toast"></div>
+    <div class="toast" id="toast"></div>
 
-  <footer>
-    <span>WatchFlow</span>
-    <span>Data provided by TMDB</span>
-  </footer>
+    <footer>
+      <span>WatchFlow</span>
+      <span>Data provided by TMDB</span>
+    </footer>
 
-  <script src="config.js"></script>
-  <script src="app.js"></script>
-</body>
+    <script src="config.js"></script>
+    <script src="app.js"></script>
+  </body>
 </html>
