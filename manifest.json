@@ -1,0 +1,13 @@
+{
+  "background_color": "#ffffff",
+  "dir": "ltr",
+  "display": "standalone",
+  "name": "remox-code.github",
+  "orientation": "any",
+  "scope": "/",
+  "short_name": "remox-watch",
+  "start_url": "/",
+  "theme_color": "#ffffff",
+  "id": "remox-watch",
+  "description": "an app for organizing your movies and service list"
+}
